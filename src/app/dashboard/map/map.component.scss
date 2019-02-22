@@ -1,0 +1,43 @@
+.map-card
+{
+    position: absolute;
+    top: 5px;
+    bottom: 0px;
+    right: 0px;
+    left: 5px;
+    padding: 5px;
+    background-color: #00bfa5;
+    
+}
+.map-header{
+    height: 30px;
+    align-content: center;
+    width: 100%;
+    .mat-icon{
+        float: right;
+        color: white;
+    }
+    .mat-icon:hover{
+        cursor: pointer;
+      
+    }
+}
+
+.map-container{
+    height: calc(100% - 30px);
+}
+.map-container:hover{
+    cursor: grab;
+}
+
+.map-coordinate{
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    padding: 3.5px 10px;
+    background-color: #00bfa5;
+    color: white;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: x-small;
+}
