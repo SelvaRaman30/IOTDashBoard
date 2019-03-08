@@ -10,6 +10,8 @@ import Attribution from 'ol/control/Attribution';
 import MousePosition from 'ol/control/MousePosition';
 import {createStringXY} from 'ol/coordinate';
 import { defaults as defaultControls, ScaleLine } from 'ol/control.js';
+import { NgxUiLoaderService  } from 'ngx-ui-loader';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -22,13 +24,14 @@ export class MapComponent implements OnInit {
   isfullscreen : boolean;
   map : any;
   
-  constructor() {
+  constructor(private ngxService: NgxUiLoaderService) {
     this.map = new Map();
    }
 
   ngOnInit() {
-    setTimeout(function(){
-      let mousePositionControl = new MousePosition({
+    this.ngxService.startLoader('loader-map');
+    setTimeout(()=>{
+        let mousePositionControl = new MousePosition({
         coordinateFormat: createStringXY(5),
         projection: 'EPSG:4326',
         className: 'custom-mouse-position',
@@ -44,7 +47,6 @@ export class MapComponent implements OnInit {
           new Tile({
               source: new OSM({
                 url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                
               })
           })
         ],
@@ -55,10 +57,12 @@ export class MapComponent implements OnInit {
           maxZoom: 25
         })
       });
-    },5000);
+      this.ngxService.stopLoader('loader-map');
+    },500);
    }
 
   ngAfterViewInit(){
+    
  }
   
  
@@ -69,6 +73,10 @@ export class MapComponent implements OnInit {
   }
 
   updateMapSize(){
+    this.ngxService.startLoader('loader-map');
+    setTimeout(()=>{
     this.map.updateSize();
+    this.ngxService.stopLoader('loader-map');
+    },500);
   }
 }

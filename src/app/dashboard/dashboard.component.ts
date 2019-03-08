@@ -33,7 +33,6 @@ export class DashboardComponent implements OnInit {
   }
 
   toggleFullScreen(evt){
-    debugger;
     if(evt ==="fullscreen"){
       this.isFullScreen = true;
       this.currentColumns = 1;

@@ -51,7 +51,9 @@ import {
   
 } from '@angular/material';
 import { NavbarComponent } from './dashboard/navbar/navbar.component';
-
+import { ChartsModule } from 'ng4-charts/ng4-charts';
+import { NgxGaugeModule } from 'ngx-gauge';
+import { NgxUiLoaderModule } from  'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +68,7 @@ import { NavbarComponent } from './dashboard/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxUiLoaderModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -101,6 +104,8 @@ import { NavbarComponent } from './dashboard/navbar/navbar.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    ChartsModule,
+    NgxGaugeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
