@@ -10,7 +10,7 @@ import { MapComponent } from './dashboard/map/map.component';
 import { DataComponent } from './dashboard/data/data.component';
 import { MeterComponent } from './dashboard/meter/meter.component';
 import { ReportsComponent } from './dashboard/reports/reports.component';
-
+import { FormsModule } from '@angular/forms';
 
 import {
   MatAutocompleteModule,
@@ -54,6 +54,7 @@ import { NavbarComponent } from './dashboard/navbar/navbar.component';
 import { ChartsModule } from 'ng4-charts/ng4-charts';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { NgxUiLoaderModule } from  'ngx-ui-loader';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,12 +63,15 @@ import { NgxUiLoaderModule } from  'ngx-ui-loader';
     DataComponent,
     MeterComponent,
     ReportsComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     NgxUiLoaderModule,
     MatAutocompleteModule,
     MatBadgeModule,

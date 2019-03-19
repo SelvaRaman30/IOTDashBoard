@@ -1,10 +1,13 @@
 <div class="dashboard">
-<app-navbar class="dash-nav-bar"></app-navbar>
-<mat-grid-list [cols]= currentColumns [rowHeight] = currentHeight class="dash-grid-list" (window:resize)="onResize($event)">
+<app-navbar class="dash-nav-bar" ></app-navbar>
+<mat-grid-list  *ngIf=isOnline [cols]= currentColumns [rowHeight] = currentHeight class="dash-grid-list" (window:resize)="onResize($event)">
   <mat-grid-tile *ngIf="isMapShow" ><app-map (fEvent) = "toggleFullScreen($event)"></app-map></mat-grid-tile>
   <mat-grid-tile *ngIf="isMeterShow" ><app-meter></app-meter></mat-grid-tile>
   <mat-grid-tile *ngIf="isDataShow" ><app-data></app-data></mat-grid-tile>
   <mat-grid-tile *ngIf="isReportsShow" ><app-reports></app-reports></mat-grid-tile>
 </mat-grid-list>
+<div *ngIf=!isOnline>
+  Sensors Are Offline please Check
+</div>
 </div>
 

@@ -1,3 +1,14 @@
 <div class="dash-nav-bar">
-  Precision Farming DashBoard
+<mat-grid-list   cols= 4 rowHeight="50px">
+    <mat-grid-tile style="font-size: xx-large;" colspan="2"> <div> Precision Farming DashBoard </div></mat-grid-tile>
+    <mat-grid-tile style="font-size:large;"> <div> Select Site </div></mat-grid-tile>
+    <mat-grid-tile><mat-form-field>
+        <mat-select (selectionChange)=SelectionChange($event)>
+          <mat-option *ngFor="let site of sites" [value]="site">
+            {{site}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field></mat-grid-tile>
+    
+  </mat-grid-list>
 </div>

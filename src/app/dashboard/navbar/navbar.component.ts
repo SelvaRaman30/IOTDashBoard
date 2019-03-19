@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  sites = ["Site 1" , "Site 2"]
   constructor() { }
 
   ngOnInit() {
+  }
+
+  SelectionChange(event){
+    console.log(event);
   }
 
 }

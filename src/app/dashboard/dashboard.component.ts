@@ -9,7 +9,7 @@ import { MapComponent } from './map/map.component';
 export class DashboardComponent implements OnInit {
 
   @ViewChild(MapComponent) mapComponent:MapComponent;
-
+  isOnline:boolean =true;
   currentHeight:number;
   currentColumns:number;
   isMapShow:boolean    = true;
