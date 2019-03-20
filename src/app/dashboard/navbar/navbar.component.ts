@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   sites = ["Site 1" , "Site 2"]
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
 
   SelectionChange(event){
     console.log(event);
+  }
+
+  logout($event){
+    this.router.navigate(['/login']);
   }
 
 }

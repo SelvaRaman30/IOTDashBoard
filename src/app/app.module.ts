@@ -55,6 +55,7 @@ import { ChartsModule } from 'ng4-charts/ng4-charts';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { NgxUiLoaderModule } from  'ngx-ui-loader';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { LoginComponent } from './login/login.component';
     MeterComponent,
     ReportsComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
     
   ],
   imports: [

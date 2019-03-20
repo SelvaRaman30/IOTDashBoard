@@ -1,7 +1,7 @@
 <mat-card class="map-card">
     <div class="map-header">
-         <mat-icon *ngIf="!isfullscreen" (click)="viewFullScreen($event)">fullscreen</mat-icon>
-         <mat-icon *ngIf="isfullscreen" (click)="viewFullScreen($event)">fullscreen_exit</mat-icon>
+         <mat-icon  matTooltip="Fullscreen" *ngIf="!isfullscreen" (click)="viewFullScreen($event)">fullscreen</mat-icon>
+         <mat-icon matTooltip="Exit Fullscreen" *ngIf="isfullscreen" (click)="viewFullScreen($event)">fullscreen_exit</mat-icon>
         </div>
     <div class="map-container" id="map"></div>
     <div class="map-coordinate" id="widget-coordinate"></div>

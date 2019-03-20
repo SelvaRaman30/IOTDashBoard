@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,24 +12,28 @@ export class LoginComponent implements OnInit {
   username;
   password;
   error;
-  constructor(private router : Router ) { 
-    
+  constructor(private router: Router) {
+
   }
 
   ngOnInit() {
-    
+
   }
 
-  onSubmit(){
-    
-    if(this.username){
-      if(this.password){
+  removeError(){
+    this.error = null;
+  }
+
+  onSubmit() {
+
+    if (this.username) {
+      if (this.password) {
         this.router.navigate(['/dashboard']);
-      }else{
+      } else {
         this.error = "Please Enter Password"
       }
-    }else{
-      this.error = "Please Enter Username"
+    } else {
+      this.error = "Please Enter Username";
     }
   }
 
