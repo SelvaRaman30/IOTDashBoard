@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
 
   username;
   password;
+  cnfPassword;
+  isregister:boolean=false;
   error;
   constructor(private router: Router) {
 
@@ -35,6 +37,10 @@ export class LoginComponent implements OnInit {
     } else {
       this.error = "Please Enter Username";
     }
+  }
+
+  onRegister(){
+    console.log("tttt")
   }
 
 }
