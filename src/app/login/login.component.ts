@@ -8,39 +8,43 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  /* #region  Declaration  */
   username;
   password;
   cnfPassword;
-  isregister:boolean=false;
+  isRegisterLinkClicked = false;
+  bttontext = 'Login';
   error;
+  btnLogin;
+  /* #endregion */
   constructor(private router: Router) {
 
   }
 
   ngOnInit() {
-
   }
 
-  removeError(){
+  removeError() {
     this.error = null;
   }
 
   onSubmit() {
 
-    if (this.username) {
-      if (this.password) {
-        this.router.navigate(['/dashboard']);
-      } else {
-        this.error = "Please Enter Password"
-      }
+
+    if (!this.isRegisterLinkClicked) {
     } else {
-      this.error = "Please Enter Username";
-    }
+   }
   }
 
-  onRegister(){
-    console.log("tttt")
+  onlinkClick() {
+    this.bttontext = this.isRegisterLinkClicked ? 'Login' : 'Register';
+    this.removeError();
+    if (!this.isRegisterLinkClicked) {
+        this.isRegisterLinkClicked = true;
+        console.log(this.btnLogin);
+    } else {
+      this.isRegisterLinkClicked = false;
+    }
   }
 
 }
